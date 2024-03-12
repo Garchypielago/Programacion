@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ejemploswhile;
 
 public class BucleWhile2 {
@@ -16,3 +17,23 @@ public class BucleWhile2 {
 
 }
 
+=======
+package ejemploswhile;
+
+public class BucleWhile2 {
+
+	public static void main(String args[]) {
+		int i=1;
+		
+		while (i<=10) {
+			System.out.println(i);
+			i+=2;
+		}
+		// Cuanto vale num fuera del bucle
+		System.out.println(i);
+	}
+
+
+}
+
+>>>>>>> cd9c84d5df7ff962d8ba5fa320e6bfc7b852a830
