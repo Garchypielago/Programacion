@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;enunciadosBBDD/src/empresa&apos;&#x0D;&#x0A;- Original project: &apos;EsqueletoBD&apos;&#x0D;&#x0A;- Destination element: &apos;enunciadosBBDD/src/empresa&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     registrado.ConstantesBD.java&#x0D;&#x0A;     registrado.AccesoDatos.java&#x0D;&#x0A;     registrado.Conexion.java" description="Copy compilation units" destination="=enunciadosBBDD/src&lt;empresa" element1="/src&lt;registrado{ConstantesBD.java" element2="/src&lt;registrado{AccesoDatos.java" element3="/src&lt;registrado{Conexion.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1710358636900" units="3" version="1.0"/>
+</session>

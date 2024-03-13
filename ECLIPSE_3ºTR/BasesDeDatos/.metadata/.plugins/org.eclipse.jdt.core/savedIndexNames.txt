@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+C:\Users\Vespertino\Desktop\repositorios\Programacion\ECLIPSE_3ºTR\BasesDeDatos\.metadata\.plugins\org.eclipse.jdt.core
+418338096.index
+2857444173.index
+1865797976.index
+1018287700.index
+390107934.index
