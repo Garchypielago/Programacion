@@ -142,7 +142,7 @@ public class AccesoDatos {
 
 		try (PreparedStatement pstmt = con.prepareStatement(
 				"select de.dept_no, de.dnombre, de.loc from departamentos de where de.dept_no = ? ;")) {
-			
+
 			pstmt.setInt(1, num);
 			ResultSet rs;
 			rs = pstmt.executeQuery();
@@ -156,9 +156,18 @@ public class AccesoDatos {
 		}
 		return dep;
 	}
-	
+
 	public static void subirSalario(Connection con, int num, double sal) {
-		
+		try (PreparedStatement pstmt = con.prepareStatement(
+				"update empleados set salario = (salario + " + sal + ") where dept_no = " + num + ";")) {
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

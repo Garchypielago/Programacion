@@ -35,6 +35,8 @@ public class main {
 		AccesoDatos.insertarDeptno(conexion, dept);
 
 		AccesoDatos.actualizarDeptno(conexion, dept2);
+		
+		AccesoDatos.subirSalario(conexion, 20, 0.5);
 
 		Conexion.desConexion(conexion);
 	}
