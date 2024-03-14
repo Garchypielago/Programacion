@@ -93,11 +93,11 @@ public class AccesoDatos {
 				tamanio=rs.getString(6);
 
 				pstmt.setInt(1, id);
-				pstmt.setNString(2, nom);
-				pstmt.setNString(3, ape);
+				pstmt.setString(2, nom);
+				pstmt.setString(3, ape);
 				pstmt.setInt(4, edad);
-				pstmt.setNString(5, nompais);
-				pstmt.setNString(6, tamanio);
+				pstmt.setString(5, nompais);
+				pstmt.setString(6, tamanio);
 				
 				cambiados += pstmt.executeUpdate();
 			}	

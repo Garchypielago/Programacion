@@ -6,6 +6,10 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/garchy/Documentos/Programacion/ECLIPSE_3ºTR/BasesDeDatos/pruebasBBDD"/>
+			<item value="/home/garchy/Documentos/Programacion/ECLIPSE_3ºTR/BasesDeDatos/EjRegistrado"/>
+			<item value="/home/garchy/Documentos/Programacion/ECLIPSE_3ºTR/BasesDeDatos/EsqueletoBD"/>
+			<item value="/home/garchy/Documentos/Programacion/ECLIPSE_3ºTR/BasesDeDatos/enunciadosBBDD"/>
 			<item value="C:\Users\Vespertino\Desktop\repositorios\Programacion\ECLIPSE_3ºTR\BasesDeDatos\enunciadosBBDD"/>
 			<item value="C:\Users\Vespertino\Desktop\repositorios\Programacion\ECLIPSE_3ºTR\BasesDeDatos\pruebasBBDD"/>
 			<item value="C:\Users\Vespertino\Desktop\repositorios\Programacion\ECLIPSE_3ºTR\BasesDeDatos\EsqueletoBD"/>

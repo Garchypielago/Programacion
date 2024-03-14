@@ -1,6 +1,6 @@
-INDEX VERSION 1.134+C:\Users\Vespertino\Desktop\repositorios\Programacion\ECLIPSE_3ºTR\BasesDeDatos\.metadata\.plugins\org.eclipse.jdt.core
-418338096.index
-2857444173.index
+INDEX VERSION 1.134+/home/garchy/Documentos/Programacion/ECLIPSE_3ÂºTR/BasesDeDatos/.metadata/.plugins/org.eclipse.jdt.core
+4186271817.index
+999278110.index
+6366155.index
+1262159412.index
 1865797976.index
-1018287700.index
-390107934.index
