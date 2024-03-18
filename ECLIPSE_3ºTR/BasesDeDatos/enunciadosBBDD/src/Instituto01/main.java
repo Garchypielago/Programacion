@@ -12,7 +12,7 @@ public class main {
 		
 		
 		
-		//AccesoDatos.crearTbalaNotasFinales(conexion);
+		AccesoDatos.crearTbalaNotasFinales(conexion);
 		
 		AccesoDatos.borrarNotasFinales(conexion);
 		

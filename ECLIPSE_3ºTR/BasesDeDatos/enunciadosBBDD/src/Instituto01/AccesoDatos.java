@@ -61,10 +61,10 @@ public class AccesoDatos {
 			con = Conexion.conexion(ConstantesBD.URL, ConstantesBD.USUARIO, ConstantesBD.PWD);
 
 		try (PreparedStatement pstmt = con.prepareStatement("select al.APEL_NOM, a.NOMBRE, n.NOTA1, n.NOTA2, n.NOTA3, nf.NotaMedia\r\n"
-				+ "from alumnos al\r\n"
-				+ "left join notas n on al.MAT=n.MAT\r\n"
-				+ "left join asignaturas a on a.COD=n.COD\r\n"
-				+ "left join notasfinales nf on nf.MAT=al.MAT and nf.COD=a.COD;", ResultSet.TYPE_SCROLL_INSENSITIVE,
+				+ "from ALUMNOS al\r\n"
+				+ "left join NOTAS n on al.MAT=n.MAT\r\n"
+				+ "left join ASIGNATURAS a on a.COD=n.COD\r\n"
+				+ "left join NotasFinales nf on nf.MAT=al.MAT and nf.COD=a.COD;", ResultSet.TYPE_SCROLL_INSENSITIVE,
 				ResultSet.CONCUR_UPDATABLE)) {
 
 			ResultSet rs = pstmt.executeQuery();
@@ -155,7 +155,7 @@ public class AccesoDatos {
 			int notaFinal;
 			int cambiados = 0;
 			
-			PreparedStatement pstmt2= con.prepareStatement("select * from notas;");
+			PreparedStatement pstmt2= con.prepareStatement("select * from NOTAS;");
 			
 			ResultSet rs;
 			rs = pstmt2.executeQuery();
