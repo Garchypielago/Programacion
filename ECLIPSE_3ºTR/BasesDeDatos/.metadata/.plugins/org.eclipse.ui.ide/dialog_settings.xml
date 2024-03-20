@@ -6,6 +6,13 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\Soluciones"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\pruebasBBDD"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\EsqueletoBD"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\enunciadosBBDD"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\EjRegistrado"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\EjemplosMetaData"/>
+			<item value="E:\Escritorio\Git_REPOSITORIOS\Programacion\ECLIPSE_3ºTR\BasesDeDatos\BBDD_Oracle"/>
 			<item value="/home/garchy/Escritorio/Repositorios/Programacion/ECLIPSE_3ºTR/BasesDeDatos/Soluciones"/>
 			<item value="/home/garchy/Escritorio/Repositorios/Programacion/ECLIPSE_3ºTR/BasesDeDatos/EjRegistrado"/>
 			<item value="/home/garchy/Escritorio/Repositorios/Programacion/ECLIPSE_3ºTR/BasesDeDatos/pruebasBBDD"/>
