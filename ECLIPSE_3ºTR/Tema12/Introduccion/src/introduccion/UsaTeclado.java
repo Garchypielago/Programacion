@@ -1,4 +1,4 @@
-package src;
+package introduccion;
 
 public class UsaTeclado {
 	public static void main(String[] args) {

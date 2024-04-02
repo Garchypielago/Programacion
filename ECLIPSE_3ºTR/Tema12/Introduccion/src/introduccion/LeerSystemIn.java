@@ -3,7 +3,7 @@
 // Salto de linea en MAC y LINUX \n
 // Salto de linea en WINDOWS \r\n
 //
-package src;
+package introduccion;
 
 import java.io.IOException;
 

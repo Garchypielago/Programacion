@@ -1,4 +1,4 @@
-package src;
+package introduccion;
 
 import java.io.*;
 public class Eco {
