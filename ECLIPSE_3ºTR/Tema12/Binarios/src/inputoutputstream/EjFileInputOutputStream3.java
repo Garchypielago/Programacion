@@ -17,7 +17,7 @@ public class EjFileInputOutputStream3 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		final String ORIGEN = "origen2.txt", DESTINO = "destino2.txt";
+		final String ORIGEN = "..\\origen2.txt", DESTINO = "destino2.txt";
 
 		try (FileInputStream in = new FileInputStream(ORIGEN);
 				FileOutputStream out = new FileOutputStream(DESTINO)) {// podemos poner true como segundo parametro

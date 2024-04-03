@@ -19,7 +19,7 @@ public class EjFileInputOutputStream2 {
 	 */
 	public static void main(String[] args) {
 		final int TAM = 1024;
-		final String ORIGEN = "origen.txt", DESTINO = "destino.txt";
+		final String ORIGEN = "..\\origen.txt", DESTINO = "destino.txt";
 
 		try (FileInputStream in = new FileInputStream(ORIGEN);
 				FileOutputStream out = new FileOutputStream(DESTINO)) {

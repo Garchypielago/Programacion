@@ -19,6 +19,7 @@ public class EjFileInputOutputStream1 {
 	public static void main(String[] args) {
 		final int TAM = 1024;
 		final String ORIGEN = "..\\Desert.jpg", DESTINO = "Desierto.jpg";
+		//el oigen es una carpeta atras, el workspace, mientras que el origen es con la carpeta de paquetes
 
 		try (FileInputStream in = new FileInputStream(ORIGEN);
 				FileOutputStream out = new FileOutputStream(DESTINO)) {
