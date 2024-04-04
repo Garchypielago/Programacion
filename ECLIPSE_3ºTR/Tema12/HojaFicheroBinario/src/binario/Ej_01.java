@@ -18,11 +18,11 @@ public class Ej_01 {
 		try (Scanner teclado = new Scanner(System.in);
 				DataOutputStream dos = new DataOutputStream(new FileOutputStream(FICHERO))) {
 
-			cantidad = (double) ((double) Math.random() * 101);
-			System.out.println("Rango de los numeros: " + cantidad);
+			System.out.println("Rango de los numeros: ");
+			cantidad = Double.parseDouble(teclado.nextLine());
 
 			for (int i = 1; i <= cantidad; i++) {
-				numero = (double) ((double) Math.random() * 10);
+				numero = (double) ((double) Math.random() * 11);
 				dos.writeDouble(numero);
 			}
 
