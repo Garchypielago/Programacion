@@ -19,7 +19,7 @@ public class Ej_03 {
 		boolean residencia = false;
 		double ingresos;
 
-		try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(fichero))) {
+		try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(fichero, true))) {
 
 			nombre = JOptionPane.showInputDialog("Nombre del alumno");
 			dos.writeUTF(nombre);
@@ -47,7 +47,7 @@ public class Ej_03 {
 		
 		try (DataInputStream dis = new DataInputStream(new FileInputStream(fichero))) {
 			try {
-				System.out.println(String.format("%-15s %-15s %-6s %-5s %-10s %-10s", "Nombre", "Apellido", "Genero", "Edad", "Suspensos", "Ingresos")); 
+				System.out.println(String.format("%-15s %-15s %-10s %-10s %-10s %-10s", "Nombre", "Apellido", "Genero", "Edad", "Suspensos", "Ingresos")); 
 				
 				while (true) {
 					nombre=dis.readUTF();
@@ -55,9 +55,10 @@ public class Ej_03 {
 					genero=dis.readChar();
 					edad=dis.readInt();
 					suspensos=dis.readInt();
+					dis.readBoolean();
 					ingresos=dis.readDouble();
 					
-					System.out.println(String.format("%-15s %-15s %-6s %-5d %-10d %-10f", nombre, apellido, genero, edad, suspensos, ingresos)); 
+					System.out.println(String.format("%-15s %-15s %-10s %-10d %-10d %-10f", nombre, apellido, genero, edad, suspensos, ingresos)); 
 
 				}
 			} catch (EOFException ex) {
