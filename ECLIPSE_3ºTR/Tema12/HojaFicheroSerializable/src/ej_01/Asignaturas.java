@@ -24,8 +24,11 @@ public class Asignaturas {
 		
 		while(seguir) {
 		nombre = JOptionPane.showInputDialog("Nombre de la asignatura");
-		nota = Double.parseDouble(JOptionPane.showInputDialog("Nota de la asignatura"));
 		
+		nota=-1;
+		while(0>nota && nota>10) {
+		nota = Double.parseDouble(JOptionPane.showInputDialog("Nota de la asignatura"));
+		}
 		addAsig(new Asignatura(nombre,nota));
 		
 		seguir = (JOptionPane.showConfirmDialog(
