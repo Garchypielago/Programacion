@@ -34,7 +34,7 @@ class MenuApp {
 	}
 
 	final static String FICH = "Empresa.obj";
-	// final static String FICH = JOptionPane.showInputDialog("Nombre del alumno") +
+	// final static String FICH = JOptionPane.showInputDialog("Nombre de empresa") +
 	// ".obj";
 
 	public static void main(String args[]) {
@@ -42,9 +42,11 @@ class MenuApp {
 		int opcion = 0;
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		while (opcion != MAX_OPC) {
 			opcion = menu(MAX_OPC, sc);
+			String NIF;
+
 			switch (opcion) {
 			case 1:
 				try {
@@ -62,7 +64,7 @@ class MenuApp {
 				listarClientes(FICH);
 				break;
 			case 3:
-				String NIF = JOptionPane.showInputDialog("Escribe el NIF del cliente");
+				NIF = JOptionPane.showInputDialog("Escribe el NIF del cliente");
 				Cliente cl = buscarCliente(FICH, NIF);
 				if (cl != null)
 					System.out.println(cl.toString());
@@ -70,10 +72,11 @@ class MenuApp {
 					System.out.println("Cliente no encontrado.");
 				break;
 			case 4:
-				
+				NIF = JOptionPane.showInputDialog("Escribe el NIF del cliente");
+				borrarCliente(FICH, NIF);
 				break;
 			case 5:
-				
+				borrarFichero(FICH);
 				break;
 			case 6:
 				System.out.println("Programa finalizado");
@@ -86,7 +89,6 @@ class MenuApp {
 	public static void addCliente(String FICH, Cliente cl) {
 		try {
 			File f = new File(FICH);
-
 			if (f.exists() && f.length() > 0) {
 				ClaseOutput co = new ClaseOutput(new FileOutputStream(f, true));
 				co.writeObject(cl);
@@ -144,15 +146,54 @@ class MenuApp {
 	}
 
 	public static void borrarCliente(String FICH, String NIF) {
-		
+
+		final String FICH_AUX = "auxiliar.obj";
+		Cliente cl2;
+		boolean hecho = false;
+
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FICH));
+				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FICH_AUX))) {
+
+			try {
+				Cliente cl = new Cliente(NIF);
+				while (true) {
+					cl2 = (Cliente) ois.readObject();
+					if (!cl2.equals(cl)) {
+						oos.writeObject(cl2);
+						hecho = true;
+					}
+				}
+			} catch (EOFException ex) {
+			}
+			oos.close();
+			ois.close();
+
+			File faux = new File(FICH_AUX);
+			File f1 = new File(FICH);
+			if (f1.delete()) {
+				faux.renameTo(f1);
+				if (hecho)
+					System.out.println("Cliente " + NIF + " borrado");
+				else
+					System.out.println("Cliente no encontrado.");
+			} else
+				System.out.println("Se ha producido un error en la copia de registros nuevos al fichero");
+		} catch (IOException ex) {
+			System.out.println(ex);
+		} catch (ClassNotFoundException ex) {
+			System.out.println(ex);
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+
 	}
-	
+
 	public static void borrarFichero(String FICH) {
-		File f =new File(String.valueOf(FICH));
+		File f = new File(String.valueOf(FICH));
 		if (f.delete())
 			System.out.println("Se ha borrado");
-		else 
+		else
 			System.out.println("No se ha borrado");
 	}
-	
+
 }

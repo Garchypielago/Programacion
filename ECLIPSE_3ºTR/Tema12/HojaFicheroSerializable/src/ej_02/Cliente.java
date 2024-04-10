@@ -1,6 +1,13 @@
 package ej_02;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String NIF, nombre, direccion;
 	private int telefono;
 	private double deuda;
@@ -12,6 +19,11 @@ public class Cliente {
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.deuda = deuda;
+	}
+
+	public Cliente(String nIF) {
+		super();
+		NIF = nIF;
 	}
 
 	public String getNIF() {
@@ -57,6 +69,15 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return String.format("%-12s %-25s %-30s %-12s %-10s" , NIF, nombre, direccion,telefono,deuda);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if(NIF.equalsIgnoreCase(((Cliente)obj).NIF))
+			return true;
+		
+		return false;
 	}
 	
 	
