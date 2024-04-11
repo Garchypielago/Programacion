@@ -2,7 +2,7 @@ package texto;
 
 import java.io.*;
 
-public class Ej2_3 {
+public class Ej2_3este {
 	public static void main(String[] args) {
 
 		final String FICHERO1 = "parrafo.txt", FICHERO2 = "parrafo11.txt";
@@ -10,7 +10,7 @@ public class Ej2_3 {
 		crearFicheroSinVoc(FICHERO1, FICHERO2);
 
 		leerFichero(FICHERO1);
-		// Ahora leemos el nuevo fichero creado, línea a línea
+		// Ahora leemos el nuevo fichero creado, lï¿½nea a lï¿½nea
 		leerFichero(FICHERO2);
 	}
 

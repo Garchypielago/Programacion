@@ -2,7 +2,7 @@ package texto;
 import java.io.*;
 import java.util.Scanner;
 
-public class Ej4_2 {
+public class Ej4_2este {
 	public static void main(String[] args) {
 
 		final String FICHERO1 = "parrafo.txt", FICHERO2 = "parrafo1.txt";

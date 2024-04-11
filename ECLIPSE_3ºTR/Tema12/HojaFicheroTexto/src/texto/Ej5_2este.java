@@ -3,7 +3,7 @@ package texto;
 import java.io.*;
 import java.util.Scanner;
 
-public class Ej5_2 {
+public class Ej5_2este {
 	public static void main(String[] args) {
 		final String FICHERO = "nombres.txt";
 		Scanner sc = new Scanner(System.in);

@@ -3,7 +3,7 @@ package texto;
 import java.io.*;
 import java.util.*;
 
-public class Ej1_2 {
+public class Ej1_2este {
 	public static void main(String[] args) {
 		Scanner teclado = new Scanner(System.in);
 		final String FICHERO = "parrafo.txt";

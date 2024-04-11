@@ -2,7 +2,7 @@ package texto;
 
 import java.io.*;
 
-public class Ej6_2 {
+public class Ej6_2este {
 	public static void main(String[] args) {
 
 		final String FICHERO = "nombres.txt";
