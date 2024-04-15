@@ -3,7 +3,7 @@ package ej_03;
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class Contacto implements Serializable, Comparator<Contacto> {
+public class Contacto implements Serializable, Comparator<Contacto>, Comparable<Contacto> {
 
 	/**
 	 * 
@@ -77,7 +77,20 @@ public class Contacto implements Serializable, Comparator<Contacto> {
 	@Override
 	public int compare(Contacto o1, Contacto o2) {
 		// TODO Auto-generated method stub
+		if (((Contacto)o1).nombre.compareToIgnoreCase(((Contacto)o2).nombre) == 0) {
+			return ((Contacto)o1).apellidos.compareToIgnoreCase(((Contacto)o2).apellidos);
+		}
 		return ((Contacto)o1).nombre.compareToIgnoreCase(((Contacto)o2).nombre);
+			
+	}
+
+	@Override
+	public int compareTo(Contacto o) {
+		// TODO Auto-generated method stub
+		if (nombre.compareToIgnoreCase(((Contacto)o).nombre) == 0) {
+			return apellidos.compareToIgnoreCase(((Contacto)o).apellidos);
+		}
+		return nombre.compareToIgnoreCase(((Contacto)o).nombre);
 	}
 
 }

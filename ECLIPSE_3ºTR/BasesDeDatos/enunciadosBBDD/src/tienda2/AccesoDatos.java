@@ -1,6 +1,11 @@
 package tienda2;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class AccesoDatos {
 
@@ -61,6 +66,28 @@ public class AccesoDatos {
 	 * borrarRegistro
 	 */
 	public static void borrarRegistro(Connection con, String usuario) {
+
+	}
+	
+	public static void resetearTienda(Connection con, String FICH_RESET) {
+		if (con == null)
+			con = Conexion.conexion(ConstantesBD.URL, ConstantesBD.USUARIO, ConstantesBD.PWD);
+
+		try (PreparedStatement pst = con.prepareStatement("delete from productos;");
+				BufferedReader br = new BufferedReader(new FileReader(FICH_RESET))) {
+			pst.executeUpdate();
+			
+			String frase;
+			while ((frase = br.readLine()) != null) {
+				pst.executeUpdate(frase);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 
 	}
 }

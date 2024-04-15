@@ -62,7 +62,7 @@ class MenuApp {
 			case 2:
 				try {
 					Contacto cont;
-					cont = crearContacto(sc);
+					cont = crearMedioContacto(sc);
 					buscarContacto(FICH, cont);
 					if (cont != null)
 						System.out.println(cont.toString());
@@ -75,7 +75,7 @@ class MenuApp {
 			case 3:
 				try {
 					Contacto cont;
-					cont = crearContacto(sc);
+					cont = crearMedioContacto(sc);
 					modificarContacto(FICH, cont, sc);
 					if (cont != null)
 						System.out.println("Se ha modificado: " + cont.toString());
@@ -88,7 +88,7 @@ class MenuApp {
 			case 4:
 				try {
 					Contacto cont;
-					cont = crearContacto(sc);
+					cont = crearMedioContacto(sc);
 					eliminarContacto(FICH, SUP_FICH, cont);
 					if (cont != null)
 						System.out.println("Se ha eliminado: " + cont.toString());
@@ -127,6 +127,19 @@ class MenuApp {
 		System.out.println("Telefono:");
 		numero = Integer.parseInt(sc.nextLine());
 		cont = new Contacto(nombre, apellidos, email, numero);
+
+		return cont;
+	}
+	
+	public static Contacto crearMedioContacto(Scanner sc) {
+		Contacto cont = null;
+		String nombre, apellidos;
+
+		System.out.println("Nombre:");
+		nombre = sc.nextLine();
+		System.out.println("Apellido:");
+		apellidos = sc.nextLine();
+		cont = new Contacto(nombre, apellidos);
 
 		return cont;
 	}
@@ -220,24 +233,32 @@ class MenuApp {
 	}
 
 	public static void eliminarContacto(String FICH, String SUP_FICH, Contacto cont) {
+		final String FICH_AUX = "auxiliar.obj";
 		Contacto cont2;
 		boolean hecho = false;
 
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FICH));
+				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FICH_AUX));
 				BufferedWriter bw = new BufferedWriter(new FileWriter(SUP_FICH))) {
 
 			try {
 				while (true) {
 					cont2 = (Contacto) ois.readObject();
 					if (!cont2.equals(cont)) {
+						oos.writeObject(cont2);
+					}
+					if (cont2.equals(cont)) {
 						bw.write(cont2.toString() + "\r\n");
 						hecho = true;
 					}
 				}
 			} catch (EOFException ex) {
 			}
+			oos.close();
+			ois.close();
+			bw.close();
 
-			File faux = new File(SUP_FICH);
+			File faux = new File(FICH_AUX);
 			File f1 = new File(FICH);
 			if (f1.delete()) {
 				faux.renameTo(f1);
@@ -302,7 +323,7 @@ class MenuApp {
 		}
 	}
 
-	public static void mostrarEliminados(String FICH) {
+	public static void mostrarEliminados(String SUP_FICH) {
 		String frase;
 		try (BufferedReader br = new BufferedReader(new FileReader(SUP_FICH))) {
 			while ((frase = br.readLine()) != null) {
