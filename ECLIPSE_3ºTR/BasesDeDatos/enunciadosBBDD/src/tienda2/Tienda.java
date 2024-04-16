@@ -11,15 +11,22 @@ public class Tienda {
 		tienda = new ArrayList<Producto>();
 	}
 	
-	public void addTienda(Producto pr) {
+	public void add(Producto pr) {
 		tienda.add(pr);
 	}
 	
 	public void leer() {
-		for (int i=0;i<=tienda.size();i++) {
+		for (int i=0;i<tienda.size();i++) {
 			System.out.println( tienda.get(i));
 		}
 	}
 	
+	public int tam() {
+		return tienda.size();
+	}
+	
+	public Producto getProducto(int i) {
+		return tienda.get(i);
+	}
 	
 }

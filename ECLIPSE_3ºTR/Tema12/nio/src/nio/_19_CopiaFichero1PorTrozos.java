@@ -10,7 +10,7 @@ import java.nio.file.StandardOpenOption;
 
 // Copiamos un fichero usando buffer binario
 public class _19_CopiaFichero1PorTrozos {
-	final static String RUTA1 = "desierto.jpg";
+	final static String RUTA1 = "Desierto.jpg";
 	final static String RUTA2 = "desierto3.jpg";
 
 	public static void main(String args[]) {

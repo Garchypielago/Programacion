@@ -39,21 +39,6 @@ public class AccesoDatos {
 	}
 
 	/*
-	 * crearTablaRegistro
-	 */
-	public static void crearTablaRegistro(Connection con) {
-
-	}
-
-	/*
-	 * rellenarTablaRegistro, en esta versionse aniaden registros sueltos en el
-	 * propio metodo
-	 */
-	public static void rellenarTablaRegistro(Connection con) {
-
-	}
-
-	/*
 	 * leerRegistrados
 	 */
 	public static void leerInstituto(Connection con) {
@@ -89,21 +74,7 @@ public class AccesoDatos {
 
 
 	}
-
-	/*
-	 * leerRegistradosPrepared
-	 */
-	public static void leerRegistradosPrepared(Connection con, String usuario) {
-
-	}
-
-	/*
-	 * modificarRegistrado
-	 */
-	public static void modificarRegistrado(Connection con, String usuario, String nuevoCorreo) {
-
-	}
-
+	
 	/*
 	 * borrarNotasFinales
 	 */

@@ -12,7 +12,7 @@ public class Producto implements Serializable {
 	private int codigo, precio, cantidad;
 	private String nombre;
 
-	public Producto(int codigo, int precio, int cantidad, String nombre) {
+	public Producto(int codigo, String nombre, int precio, int cantidad) {
 		super();
 		this.codigo = codigo;
 		this.precio = precio;
