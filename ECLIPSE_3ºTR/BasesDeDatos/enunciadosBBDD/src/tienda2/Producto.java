@@ -73,5 +73,12 @@ public class Producto implements Serializable {
 		
 		return false;
 	}
+	
+	public boolean comprobar(Producto pr) {
+		if(codigo==pr.codigo && nombre.equals(pr.nombre)&& precio==pr.precio && cantidad==pr.cantidad)
+			return true;
+		
+		return false;
+	}
 
 }
