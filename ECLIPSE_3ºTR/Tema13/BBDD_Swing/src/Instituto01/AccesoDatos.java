@@ -37,6 +37,21 @@ public class AccesoDatos {
 		}
 
 	}
+	
+	public static void borrarAlumno(Connection con, String mat) {
+		if (con == null)
+			con = Conexion.conexion(ConstantesBD.URL, ConstantesBD.USUARIO, ConstantesBD.PWD);
+
+		try (Statement st = con.createStatement()) {
+			st.execute("delete from alumnos where mat = ? ;");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	/*
 	 * leerRegistrados
@@ -58,13 +73,7 @@ public class AccesoDatos {
 			while (rs.next()) {
 				System.out.println(rs.getString(1) + "\t\t" + rs.getString(2) + "\t\t" + rs.getInt(3)+ "\t\t" + rs.getInt(4)+ "\t\t" + rs.getInt(5)+ "\t\t" + rs.getInt(6));
 			}
-
-//			rs.beforeFirst();
-//			// Ahora quiero empezar desde el ppio de nuevo
-//			System.out.println("    Usuario\t\tCorreo\t\tFecha de nacimiento\n");
-//			while (rs.next()) {
-//				System.out.println(rs.getString(1) + "\t\t" + rs.getString(2) + "\t\t" + rs.getDate(3));
-//			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -73,6 +82,32 @@ public class AccesoDatos {
 		}
 
 
+	}
+	
+	public static String stringInstituto(Connection con) {
+		if (con == null)
+			con = Conexion.conexion(ConstantesBD.URL, ConstantesBD.USUARIO, ConstantesBD.PWD);
+		
+		String insti = "";
+
+		try (PreparedStatement pstmt = con.prepareStatement("select *\r\n"
+				+ "from ALUMNOS al", ResultSet.TYPE_SCROLL_INSENSITIVE,
+				ResultSet.CONCUR_UPDATABLE)) {
+
+			ResultSet rs = pstmt.executeQuery();
+			insti = ("    Matricula\tNombre\t\tPoblacion\tTelefono\n" );
+			while (rs.next()) {
+				insti = insti + ( rs.getString(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3)+ "\t" + rs.getString(4) + "\n");
+			}
+			
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return insti;
 	}
 	
 	/*
