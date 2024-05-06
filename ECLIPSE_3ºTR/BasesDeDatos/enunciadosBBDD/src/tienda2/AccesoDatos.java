@@ -202,14 +202,17 @@ public class AccesoDatos {
 					throw new Excepciones("ERROR: BBDD no actualizada.");
 				}
 			}
-
-			System.out.println("BBDD sincronizadas");
+			System.out.println();
+			System.out.println("BBDDs sincronizadas");
+			System.out.println();
 			ois.close();
 		} catch (EOFException ex) {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Excepciones e) {
-			e.printStackTrace();
+			System.out.println();
+			System.out.println(e.getMessage());
+			System.out.println();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -227,6 +230,9 @@ public class AccesoDatos {
 			while ((frase = br.readLine()) != null) {
 				pst.executeUpdate(frase);
 			}
+			
+			Tienda.borrarTXT();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

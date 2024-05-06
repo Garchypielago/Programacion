@@ -1,0 +1,4 @@
+Cod. - Nombre - Cant. - Total€
+Cod. - Nombre - Cant. - Total€
+1 - Teclado - 2 - 200
+2 - Disco Duro 300Gb - 6 - 3000

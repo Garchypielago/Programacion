@@ -20,14 +20,14 @@ public class pruebas {
 		tienda = AccesoDatos.FICHarray(conexion, FICH);
 		
 		//3 
+		//aqui seria meter el menu
 		tienda.leer();
-		//metodo comprar
-		
-		//4
-		//guardar en vendidos.txt
+		tienda.comprar(1, 2);
+		tienda.leer();
+		tienda.comprar(2, 6);
 		
 		//5
-		//imprimir vendidos.txt al final
+		tienda.leerTXT();
 		
 		//6
 		AccesoDatos.arrayBBDD(conexion, tienda);
@@ -37,14 +37,6 @@ public class pruebas {
 		
 		//8
 		AccesoDatos.compararBBDDFICH(conexion, FICH);
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
