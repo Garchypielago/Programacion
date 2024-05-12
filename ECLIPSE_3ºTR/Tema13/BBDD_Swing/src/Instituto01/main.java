@@ -2,6 +2,10 @@ package Instituto01;
 
 import java.sql.Connection;
 
+import ventana.AccesoDatos;
+import ventana.Conexion;
+import ventana.ConstantesBD;
+
 
 
 public class main {

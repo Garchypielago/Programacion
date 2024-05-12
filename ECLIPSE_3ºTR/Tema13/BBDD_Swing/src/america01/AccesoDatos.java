@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import Instituto01.Conexion;
-import Instituto01.ConstantesBD;
+import ventana.Conexion;
+import ventana.ConstantesBD;
 
 public class AccesoDatos {
 

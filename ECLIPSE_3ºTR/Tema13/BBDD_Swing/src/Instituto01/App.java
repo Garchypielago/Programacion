@@ -5,6 +5,9 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.Connection;
 
+import ventana.Conexion;
+import ventana.ConstantesBD;
+
 
 public class App {
 
