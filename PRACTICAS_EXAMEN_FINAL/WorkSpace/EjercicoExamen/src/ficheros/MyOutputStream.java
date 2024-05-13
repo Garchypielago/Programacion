@@ -1,4 +1,4 @@
-package tienda2;
+package ficheros;
 
 import java.io.*;
 

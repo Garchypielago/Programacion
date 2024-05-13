@@ -1,8 +1,14 @@
 package i_o;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Vehiculo {
+public class Vehiculo implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	String matricula, marca, modelo;
 	int anio;
